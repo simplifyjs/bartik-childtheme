@@ -1,0 +1,118 @@
+// Fonts import
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+ 
+ @mixin fontFace($family,$src,$style: normal,$weight: normal) {
+  @font-face {
+    font-family: $family, sans-serif;
+    src: url('#{$src}.otf');
+
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
+ 
+// Variables
+$bg-grey: #f1f2f5;
+$bg-dark: #454850;
+$bg-light: #fff;
+$bg-blue: #61C0BD;
+
+$body-font-family:  'Open Sans', sans-serif;
+$body-font-color: #5a6175;
+$body-font-size: 16px;
+
+$header-font-color-grey: #565659;
+$body-font-color-blue: #5ac0cf;
+$header-font-size: 32px;
+$header-font-block: 26px;
+
+$container-default: 1500px;
+$container-padding: 15px 40px 30px;
+
+$spacing: 30px;
+
+// Section
+@mixin respond-section($target, $context){
+   #{$target}: $context; 
+}
+
+// Layout fix width convert to responsive
+@function fix-to-respond($target, $context){
+  @return ($target / $context) * 100%;
+}
+
+// Breakpoint display
+@mixin responsive-menu($display-desktop, $display-mobile, $target, $breakpoint){
+  display: $display-mobile;
+  @media all and ($target: $breakpoint) {
+    display: $display-desktop;
+  } 
+}
+
+// Button property
+@mixin btn-property($color, $bg){
+  padding: 10px 30px;
+  color: $color;
+  background: $bg;
+  text-transform: uppercase;
+}
+
+// Remove in table and desktop devices
+.hide-lg {
+  @media(min-width: 427px){
+    display: none;
+  }
+}
+// Spacing
+.spacing-top{
+  padding-top: $spacing;
+}
+.spacing-top-bottom {
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+}
+
+// Button Classes
+.btn {
+  display: inline-block;
+  text-align: center;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.btn-dark {
+  @include btn-property($bg-light, $bg-blue);
+  
+  &:hover {
+    background: darken($bg-blue, 10%);
+  }
+}
+.btn-light {
+  @include btn-property($bg-blue, $bg-light);  
+  width: 160px;
+  border: 2px solid $bg-blue;
+  
+  &:hover {
+    border-color: darken($bg-blue, 20%);
+    color: darken($bg-blue, 20%);
+  }
+}
+.pad-mobile-container {
+  @media (max-width: 480px){
+    padding: 40px 30px;
+  }
+}
+.pad-buttom-1 {
+  padding-bottom: 1px;
+}
+.p-space {
+  margin-top: 15px;
+  margin-bottom: 26px;
+}
+
+.capitalize-header {
+  & a {
+    text-transform: capitalize;
+  }
+}

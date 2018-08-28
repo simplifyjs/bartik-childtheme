@@ -1,0 +1,48 @@
+
+body { 
+  font-family: $body-font-family;
+}
+
+*:hover {
+  text-decoration: none;
+}
+ 
+@function headings($from:1, $to:6) {
+    @if $from == $to {
+        @return 'h#{$from}';
+    } @else {
+        @return 'h#{$from},' + headings($from+1, $to);
+    }
+}
+
+
+#{headings(1,6)} {
+  @include fontFace('Museo', 'fonts/museosans-500');
+  text-transform: uppercase;
+}
+
+h2 {
+  color: $header-font-color-grey;
+  font-size: $header-font-block;
+  text-align: center;
+  
+  .not-front & {
+   text-align: left;  
+  }
+}
+
+h3 {
+  color: $body-font-color-blue;
+  & a {
+    @extend h3;
+    &:hover {
+      color: darken(#5ac0cf, 30%);
+    }
+  }
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}

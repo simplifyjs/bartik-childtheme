@@ -1,0 +1,316 @@
+// Header
+#logo {
+  padding: 21px 15px 10px 10px;
+}
+
+// Navigation
+.navigation {
+  @include responsive-menu(block, none, min-width, 768px);
+}
+.without-secondary-menu {
+  padding: 0 10px;
+}
+.menu-btn {
+  @include responsive-menu(none, block, min-width, 768px);  
+  height: 60px;
+  margin-bottom: 20px;
+  @media (min-width: 426px) and (max-width: 767px){
+    float: right;
+    margin-right: 12px;
+    margin-top: 10px;
+  }
+  @media (max-width: 425px) {
+    width: 100%;
+    height: 40px;
+  }
+}
+.menu-reponsive {
+  position: relative;
+  width:30px;
+  height:5px;
+  float: right;
+  margin-top: -11px;
+  border: 0;
+  border-radius:5px;
+  background-color:#111;
+  font-size: 0;
+
+  @media(max-width: 425px){
+     margin-top: -3px;
+  }
+}
+.menu-reponsive:after, 
+.menu-reponsive:before{
+  position:absolute;
+  left: 0;
+  content: '';
+  width: 100%;
+  height:5px;
+  border-radius:5px;
+  background-color:#111;
+}
+.menu-reponsive:after{
+    top:10px;
+}
+.menu-reponsive:before{
+    top:20px;
+}
+#main-menu {
+  clear: none;
+    @media all and (max-width: 767px){
+     width: 100%;
+     margin-bottom: 15px;
+  }
+}
+.navigation {
+  float: right;
+}
+%menu-attr {
+  @media all and (max-width: 767px){
+      float: none;
+      text-align: center;
+    }
+}
+#main-menu-links {
+  padding: 0;
+  
+  & .active {
+   & a {
+      color: $bg-blue;
+    }
+  }
+  li {  
+    @extend %menu-attr;
+    a {
+      @extend %menu-attr;
+      background: transparent;
+      border-radius: 0;
+      font-weight: bold;
+      text-shadow: none;
+      text-transform: uppercase;
+      
+      &:hover,
+      &:active, 
+      &:focus {
+        color: lighten($body-font-color, 10%);
+      }
+    }
+    &:last-child a {
+      color: $bg-blue;
+      
+      &:hover {
+        color: lighten($bg-blue, 10%);
+      }
+    }
+  }
+}
+.menu-387 {
+  border: 2px solid $bg-blue; 
+}
+
+// Banner
+.banner-row {
+  position: relative;
+  padding: 40px 30px;
+  background: rgba(0, 0, 0, 0) url("http://opencharity.travelguts.com/sites/default/files/field/image/banner_02.jpg") repeat scroll 0 0 / cover;
+  @media(min-width: 768px){
+    padding: 0; 
+  }
+}
+.banner-block {
+  //background: $bg-blue;
+   @media(max-width: 767px){
+    background: transparent;
+  }
+}
+.banner-header {
+  margin-top: 0;
+  color:$bg-light;
+  text-transform: uppercase;
+  font-size: 56px;
+  @media (max-width: 480px){
+    margin-bottom: 10px;
+    font-size: 9vw;
+    line-height: 1;
+  }
+}
+.banner-info {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  text-shadow: none;
+  height: 100%;
+  width: 100%;
+  color: $bg-light;
+    @media (min-width: 768px) {
+      position: absolute;
+      background: transparent;
+      color: #fff;
+      bottom: 0;
+    }
+}
+.banner-paragraph {
+  margin: auto;
+  max-width: 600px;
+}
+.banner-img {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+// Events
+.events-block {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.event-view-block {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  text-align: initial;
+  
+  @media(max-width: 480px){
+    flex-wrap: wrap;
+  }
+}
+
+.register {
+  @media (max-width: 480px) {
+    margin-top: 20px;
+  }
+}
+.logo-wrap {
+  text-align: center;
+}
+.highlight-text {
+  color: $body-font-color-blue;
+}
+.involve-block-view .view-content {
+  @media (min-width: 768px){
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+}
+
+// Mission Block
+.mission-block {
+  padding-bottom: 50px;
+  padding-top: 15px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.mission-block-views { 
+   .view-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap; 
+      
+      @media (min-width: 480px){
+        flex-wrap: nowrap;
+      }
+   }
+}
+.mission-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background: #fff;
+  position: relative;
+  width: 418px; 
+  margin-top: 35px;
+  margin-top: 3.5vw;
+  padding: 40px 10px 15px;  
+  border: 30px;
+}
+.views-field-field-icon {
+  width: 100%;
+  @media (min-width: 768px){
+    position: absolute;
+    top: -52px;
+    left: 0;
+  }
+  
+  & img {
+    max-width: 100%;
+    height: auto;
+    border: 10px solid #fff;
+    border-radius: 50px;
+  }
+}
+
+// Members Block
+#content h2 {
+  font-size: $header-font-block;
+}
+.member-block {
+  padding-top: 10px;
+}
+.member-block-view {
+  margin-top: 40px;
+}
+.blog-carousel {
+  .owl-controls {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 37%;     
+  }
+}
+.owl-theme {
+  .owl-controls {
+     .owl-buttons {
+      & div {
+        width: 0px;
+        height: 25px;
+        background: url(../images/controls.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: 0;
+      }
+      & .owl-next {
+        background-position: -23px 0;
+      }
+    } 
+  }
+}
+.owl-prev {
+  float: left;
+}
+.owl-next {
+  float: right;
+}
+.region-footer,
+.copyright {
+  text-align: center;
+}
+.social-link {
+  display: inline-block;
+  width: 44px;
+  height: 35px;
+  margin: 5px;
+  background-image: url('../images/social.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 0;
+}
+
+// Social Media
+.social-block  {
+  & p {
+    border-bottom: 1px solid #777777;
+    padding-bottom: 16px;    
+  }
+}
+.fb {
+  background-position: 12px 0;
+}
+.twitter {
+  background-position: -68px 0;
+}
+.googleplus {
+  background-position: -145px 0;
+}
